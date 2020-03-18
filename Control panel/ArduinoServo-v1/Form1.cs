@@ -355,7 +355,7 @@ namespace ArduinoServo_v1
         {
             adress = 1000;
             port.WriteLine(adress.ToString());
-            trackBar1.Value = 220;
+            trackBar1.Value = 270;
             port.WriteLine(trackBar1.Value.ToString());
             degree1.Text = Convert.ToString(trackBar1.Value);
         }

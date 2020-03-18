@@ -198,7 +198,7 @@
             this.trackBar5.BackColor = System.Drawing.Color.DimGray;
             this.trackBar5.Location = new System.Drawing.Point(37, 27);
             this.trackBar5.Margin = new System.Windows.Forms.Padding(2);
-            this.trackBar5.Maximum = 130;
+            this.trackBar5.Maximum = 180;
             this.trackBar5.Minimum = 1;
             this.trackBar5.Name = "trackBar5";
             this.trackBar5.Size = new System.Drawing.Size(335, 45);
