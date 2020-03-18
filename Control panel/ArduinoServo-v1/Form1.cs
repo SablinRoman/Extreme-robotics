@@ -66,26 +66,23 @@ namespace ArduinoServo_v1
         //Gorizont
         public void trackBar1_Scroll(object sender, EventArgs e)
         {
-            if (flagON == 1)
-            {
-                if (adress != 1000)
-                {
+            if (flagON == 1){
+
+                if (adress != 1000){
                     adress = 1000;
                     port.WriteLine(adress.ToString());
                 }
-                else
-                {
+                else{
                     port.WriteLine(trackBar1.Value.ToString());
                     degree1.Text = trackBar1.Value.ToString();
                 } 
             }   
-            
-            else
-            {
+            else{
                 MessageBox.Show("О многоуважаемый, выберите последовательный COM порт, пожалуйста!");
                 flagON = 0;
             }
          }
+
         //plecho
         public void trackBar2_Scroll(object sender, EventArgs e)
         {
@@ -164,15 +161,12 @@ namespace ArduinoServo_v1
         //kleshnya
         private void trackBar5_Scroll(object sender, EventArgs e)
         {
-            if (flagON == 1)
-            {
-                if (adress != 1012)
-                {
+            if (flagON == 1){
+                if (adress != 1012){
                     adress = 1012;
                     port.WriteLine(adress.ToString());
                 }
-                else
-                {
+                else{
                     port.WriteLine(trackBar5.Value.ToString());
                     degree3.Text = trackBar5.Value.ToString();
                 }
@@ -190,11 +184,11 @@ namespace ArduinoServo_v1
         {
             int restart = 3019;
             port.WriteLine(restart.ToString());
-            trackBar5.Value = 1;
-            trackBar4.Value = 1;
-            trackBar3.Value = 30;
-            trackBar2.Value = 20;
-            trackBar1.Value = 25;
+            trackBar5.Value = 40;
+            trackBar4.Value = 40;
+            trackBar3.Value = 70;
+            trackBar2.Value = 85;
+            trackBar1.Value = 210;
 
         }
        

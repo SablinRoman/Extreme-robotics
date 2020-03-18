@@ -82,14 +82,14 @@
             this.trackBar1.BackColor = System.Drawing.Color.DimGray;
             this.trackBar1.Location = new System.Drawing.Point(37, 208);
             this.trackBar1.Margin = new System.Windows.Forms.Padding(2);
-            this.trackBar1.Maximum = 220;
+            this.trackBar1.Maximum = 270;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(335, 45);
             this.trackBar1.TabIndex = 0;
             this.trackBar1.TabStop = false;
             this.trackBar1.TickFrequency = 3;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBar1.Value = 22;
+            this.trackBar1.Value = 210;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             this.trackBar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.trackBar1_MouseDown);
             // 
@@ -142,7 +142,7 @@
             this.trackBar2.TabStop = false;
             this.trackBar2.TickFrequency = 5;
             this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBar2.Value = 1;
+            this.trackBar2.Value = 85;
             this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             this.trackBar2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.trackBar2_MouseDown);
             // 
@@ -162,7 +162,7 @@
             this.trackBar3.LargeChange = 10;
             this.trackBar3.Location = new System.Drawing.Point(529, 27);
             this.trackBar3.Margin = new System.Windows.Forms.Padding(2);
-            this.trackBar3.Maximum = 270;
+            this.trackBar3.Maximum = 180;
             this.trackBar3.Minimum = 30;
             this.trackBar3.Name = "trackBar3";
             this.trackBar3.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -172,7 +172,7 @@
             this.trackBar3.TabStop = false;
             this.trackBar3.TickFrequency = 3;
             this.trackBar3.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBar3.Value = 30;
+            this.trackBar3.Value = 70;
             this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
             this.trackBar3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.trackBar3_MouseDown);
             // 
@@ -181,7 +181,7 @@
             this.trackBar4.BackColor = System.Drawing.Color.DimGray;
             this.trackBar4.Location = new System.Drawing.Point(37, 120);
             this.trackBar4.Margin = new System.Windows.Forms.Padding(2);
-            this.trackBar4.Maximum = 235;
+            this.trackBar4.Maximum = 180;
             this.trackBar4.Minimum = 1;
             this.trackBar4.Name = "trackBar4";
             this.trackBar4.Size = new System.Drawing.Size(335, 45);
@@ -189,7 +189,7 @@
             this.trackBar4.TabStop = false;
             this.trackBar4.TickFrequency = 5;
             this.trackBar4.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBar4.Value = 90;
+            this.trackBar4.Value = 40;
             this.trackBar4.Scroll += new System.EventHandler(this.trackBar4_Scroll);
             this.trackBar4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.trackBar4_MouseDown);
             // 
@@ -207,7 +207,7 @@
             this.trackBar5.TabStop = false;
             this.trackBar5.TickFrequency = 5;
             this.trackBar5.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBar5.Value = 1;
+            this.trackBar5.Value = 40;
             this.trackBar5.Scroll += new System.EventHandler(this.trackBar5_Scroll);
             this.trackBar5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.trackBar5_MouseDown);
             // 

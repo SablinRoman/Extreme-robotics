@@ -23,17 +23,47 @@ void setup(){
   pinMode(in3,OUTPUT);
   pinMode(in4,OUTPUT);
 
-  
   Serial.begin(9600);// подключаем последовательный порт
   Serial3.begin(115200);
   Serial.print("Setup finished");
   HCPCA9685.Init();
   HCPCA9685.Init(SERVO_MODE); // Set to Servo Mode
   HCPCA9685.Sleep(false);
- } 
+  start_position();
+  } 
+
+ void start_position(){
+  HCPCA9685.Servo(6, mapping(6, 70));  
+  HCPCA9685.Servo(3, mapping(3, 85));  
+  HCPCA9685.Servo(0, mapping(0, 210));
+  HCPCA9685.Servo(9,  mapping(9, 40));
+  HCPCA9685.Servo(12, 40);
+  }
   
 
+void test_servo(){
+    if(Serial.available() > 0){
+      int val = Serial.parseInt();
+      Serial.println(val);
+      int main_servo = map(val, 0, 180, 0, 375);
+      Serial.println(main_servo);
+      HCPCA9685.Servo(9, main_servo);
+  }
+}
 
+int mapping(int adress, int val){
+  Serial.print("Adress in mapping fun =");
+  Serial.print(adress);
+  if(adress == 0)
+    return map(val, 0, 270, 0, 380);
+  if(adress == 3)
+    return map(val, 0, 180, 0, 290);
+  if(adress == 6)
+    return map(val, 0, 180, 0, 340);
+  if(adress == 9)
+    return map(val, 0, 180, 0, 375);
+   return val;
+  }
 
 
   
@@ -48,32 +78,24 @@ void loop(){
         else{
           adress = inputData % 10;  // Получение адреса 0-9
         }
-
-        //Вывод в компорт для Дебага
+        Serial.println("________________________________________________");
         Serial.print("Adress = ");
         Serial.println(adress); 
       }
-        if(inputData >= 2001 && inputData <= 2005){
-          CurAction = inputData - 2000;
+      if(inputData == 3019){
+        start_position();
+        }
+      if(inputData >= 2001 && inputData <= 2005){
+        CurAction = inputData - 2000;
         }
       }
      
     if(inputData < 300){
-        val = inputData;
-        if (adress == 0){    //нормирование диапазона горизонтального привода                 
-          val = map(val,0, 220, 0, 375);
-        }
-       if(adress >0)
-          val = map(val,0, 180, 0, 350);
-        
-     
+      val = inputData;
       Serial.print("inputData = "); //Вывод в монитор порта входящих данных
       Serial.println(inputData);  //Вывод в монитор порта входящих данных
       }
-    
-    testservo();
-    //rotation(); 
-   
+    rotation(); 
   }
 }
   
@@ -81,20 +103,11 @@ void rotation(){
   if (val > 0 && val != oldval){    //Если угол поворота не равен старому
     Serial.print("Angle = ");
     Serial.println(val);
-    HCPCA9685.Servo(adress,val);
+    HCPCA9685.Servo(adress,mapping(adress, val));
     }
     oldval = val;
 }
 
-void testservo(){
-      if(Serial3.available() != 0 && val != 0){
-        Serial.println("Start test");
-        val = Serial3.parseInt();
-        Serial.print("11111111tets val = ");
-        Serial.println(val);
-        HCPCA9685.Servo(1000, val);
-      }
-}
   
   
   
